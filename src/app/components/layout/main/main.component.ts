@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserComponent } from '../../user/user.component';
+import { DUMMY_USERS } from '../../../dummy-users';
 
 @Component({
   selector: 'app-main',
@@ -10,4 +11,5 @@ import { UserComponent } from '../../user/user.component';
 })
 export class MainComponent {
   title = 'angular-essentials';
+  users = DUMMY_USERS;
 }
