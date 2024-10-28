@@ -10,6 +10,9 @@ import { DUMMY_USERS } from '../../../dummy-users';
   styleUrl: './main.component.css',
 })
 export class MainComponent {
-  title = 'angular-essentials';
   users = DUMMY_USERS;
+
+  onSelectUser(id: string) {
+    console.log(`Selected user with ID ${id}`);
+  }
 }
