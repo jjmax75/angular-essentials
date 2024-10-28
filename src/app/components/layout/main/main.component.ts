@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 import { UserComponent } from '../../user/user.component';
-import { DUMMY_USERS } from '../../../dummy-users';
 import { TasksComponent } from '../../tasks/tasks.component';
+
+import { DUMMY_USERS } from '../../../dummy-users';
 
 @Component({
   selector: 'app-main',
@@ -12,9 +14,13 @@ import { TasksComponent } from '../../tasks/tasks.component';
 })
 export class MainComponent {
   users = DUMMY_USERS;
-  selectedUser = 0;
+  selectedUserId = 'u1';
+
+  get selectedUser() {
+    return this.users.find((user) => user.id === this.selectedUserId)!;
+  }
 
   onSelectUser(id: string) {
-    this.selectedUser = this.users.findIndex((user) => user.id === id);
+    this.selectedUserId = id;
   }
 }
