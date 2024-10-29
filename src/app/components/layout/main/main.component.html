@@ -7,5 +7,9 @@
     }
   </ul>
 
-  <app-tasks [name]="selectedUser?.name" />
+  @if (selectedUser) {
+  <app-tasks [name]="selectedUser.name" />
+  } @else {
+  <p>Pick a user to see their tasks</p>
+  }
 </main>
