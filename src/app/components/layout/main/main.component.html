@@ -1,15 +1,15 @@
 <main class="main">
   <ul id="users">
-    @for (user of users; track user.id) {
-    <li>
+    <li *ngFor="let user of users">
       <app-user [user]="user" (select)="onSelectUser($event)" />
     </li>
-    }
   </ul>
 
-  @if (selectedUser) {
-  <app-tasks [name]="selectedUser.name" />
-  } @else {
-  <p>Pick a user to see their tasks</p>
-  }
+  <app-tasks
+    *ngIf="selectedUser; else noSelectedUser"
+    [name]="selectedUser!.name"
+  />
+  <ng-template #noSelectedUser>
+    <p>Pick a user to see their tasks</p>
+  </ng-template>
 </main>
