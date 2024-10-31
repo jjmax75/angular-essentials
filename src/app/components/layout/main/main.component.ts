@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { UserComponent } from '../../user/user.component';
 import { TasksComponent } from '../../tasks/tasks.component';
+import { User } from '../../user/user.model';
 
 import { DUMMY_USERS } from '../../../dummy-users';
 
@@ -13,7 +14,7 @@ import { DUMMY_USERS } from '../../../dummy-users';
   styleUrl: './main.component.css',
 })
 export class MainComponent {
-  users = DUMMY_USERS;
+  users: User[] = DUMMY_USERS;
   selectedUserId?: string;
 
   get selectedUser() {
