@@ -1,5 +1,7 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { TaskComponent } from './task/task.component';
+import { Task } from './task/task';
 
 @Component({
   selector: 'app-tasks',
@@ -12,7 +14,7 @@ export class TasksComponent {
   @Input({ required: true }) userId!: string;
   @Input({ required: true }) name!: string;
 
-  tasks = [
+  tasks: Task[] = [
     {
       id: 't1',
       userId: 'u1',
